@@ -1,11 +1,10 @@
 ﻿<h3>Register</h3>
-
-<form ng-submit="register()" class="row">
+<form ng-submit="register()" name="registrationForm" class="row" novalidate>
     <div class="col-md-3">
-        <div class="row"><input class="form-control" type="text" ng-model="username" placeholder="Username" /></div>
-        <div class="row"><input class="form-control" type="password" ng-model="password1" placeholder="Password" /></div>
-        <div class="row"><input class="form-control" type="password" ng-model="password2" placeholder="Confirm Password" /></div>
-        <div class="row"><input class="btn btn-primary" type="submit" value="Register" /></div>
-    </div>    
+        <div class="row"><input class="form-control" type="email" ng-model="username" required placeholder="Email" /></div>
+        <div class="row"><input class="form-control" type="password" ng-model="password1" required placeholder="Password" /></div>
+        <div class="row"><input class="form-control" type="password" ng-model="password2" required placeholder="Confirm Password" /></div>
+        <div class="row"><input class="btn btn-primary" type="submit" value="Register" ng-disabled="registrationForm.$invalid" /></div>
+    </div>
 </form>
 <div class="row"><div class="row alert alert-danger" ng-show="showAlert">{{message}}</div></div>
